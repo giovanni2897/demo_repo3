@@ -1,3 +1,5 @@
+import pandas as pd
+
 def nullity(data):
     df=pd.DataFrame(columns=['dataFeatures','dataType','null','nullPct','unique','uniqueSample'])
     df['dataFeatures']=data.columns
@@ -7,4 +9,4 @@ def nullity(data):
     df['unique']=df['dataFeatures'].apply(lambda x: data[x].nunique())
     df['uniqueSample']=df['dataFeatures'].apply(lambda x: data[x].unique())
     print('data count : {}'.format(len(data)))
-    return df
+    return data
